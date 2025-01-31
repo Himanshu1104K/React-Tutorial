@@ -3,17 +3,23 @@ import "./App.css";
 function App() {
   return (
     <>
-      <User />
+      <User
+        name="Himanshu Kumar"
+        age={21}
+        email="kumarHimanshu1104K@gmail.com"
+      />
+      <User name="Honey Kumar" age={25} email="honey@gmail.com" />
+      <User name="Jay Singh" age={20} email="Jay@gmail.com" />
     </>
   );
 }
 
-const User = () => {
+const User = (props) => {
   return (
     <div>
-      <h1>Himanshu Kumar</h1>
-      <h1>20</h1>
-      <h1>KumarHimanshu1104K@gmail.com</h1>
+      <h1>{props.name}</h1>
+      <h1>{props.age}</h1>
+      <h1>{props.email}</h1>
     </div>
   );
 };
