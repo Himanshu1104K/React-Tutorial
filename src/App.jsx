@@ -1,35 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { useState } from "react";
 
+// function App() {
+//   // let age = 0;
+//   // const addOne = () => {
+//   //   age = age + 1;
+//   //   console.log(age);
+//   // };
+
+//   const [age, setAge] = useState(0);
+//   const addOne = () => {
+//     setAge(age + 1);
+//   };
+//   return (
+//     <>
+//       <div className="App">
+//         <h1>Age : {age}</h1>
+//         <button onClick={addOne}>Increase Age</button>
+//       </div>
+//     </>
+//   );
+// }
+
+// function App() {
+//   const [inputValue, SetInpValue] = useState("");
+//   const handleInpChange = (e) => {
+//     SetInpValue(e.target.value);
+//   };
+//   return (
+//     <>
+//       <div className="App">
+//         <h2>Type Anything</h2>
+//         <input type="text" onChange={handleInpChange} />
+//         <h1>{inputValue}</h1>
+//       </div>
+//     </>
+//   );
+// }
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [isVisible, setVisibility] = useState("True");
+  const changeVisibility = () => {
+    setVisibility(!isVisible);
+  };
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="App">
+        <button onClick={changeVisibility}>Show / Hide</button>
+        {isVisible && <h1>Hello My Name is Himanshu Kumar</h1>}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
