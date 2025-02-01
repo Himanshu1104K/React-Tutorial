@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  // // // Ternery Operator in JS
+  // let age = 19;
+  // age >= 18 ? console.log("IS OVER AGE") : console.log("IS UNDER AGE");
 
+  // return (
+  //   <>
+  //     <div className="App">
+  //       <h1 className="name">Himanshu</h1>
+  //     </div>
+  //   </>
+  // );
+
+  // Method 1
+
+  // let age = 19;
+  // if (age >= 18) {
+  //   return <h1 className="App">Over Age</h1>;
+  // } else {
+  //   return <h1 className="App">Under Age</h1>;
+  // }
+
+  // Method 2
+  let age = 17;
+  let isGreen = true;
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      <h1 className="name">{age >= 18 ? "Over Age" : "Under Age"}</h1>
+      <h1 style={{ color: isGreen ? "green" : "red" }}>This is Color</h1>
+
+      {isGreen && <button>This is a Button</button>}
+    </div>
+  );
 }
 
-export default App
+export default App;
