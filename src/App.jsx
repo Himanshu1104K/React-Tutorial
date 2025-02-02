@@ -37,16 +37,46 @@ import { useState } from "react";
 //     </>
 //   );
 // }
+// function App() {
+//   const [isVisible, setVisibility] = useState("True");
+//   const changeVisibility = () => {
+//     setVisibility(!isVisible);
+//   };
+//   return (
+//     <>
+//       <div className="App">
+//         <button onClick={changeVisibility}>Show / Hide</button>
+//         {isVisible && <h1>Hello My Name is Himanshu Kumar</h1>}
+//       </div>
+//     </>
+//   );
+// }
+
+// Exercise
 function App() {
-  const [isVisible, setVisibility] = useState("True");
-  const changeVisibility = () => {
-    setVisibility(!isVisible);
+  const [count, setCount] = useState(0);
+
+  const Increase = () => {
+    setCount(count + 1);
   };
+
+  const Decrease = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+  };
+
+  const toZero = () => {
+    setCount(0);
+  };
+
   return (
     <>
       <div className="App">
-        <button onClick={changeVisibility}>Show / Hide</button>
-        {isVisible && <h1>Hello My Name is Himanshu Kumar</h1>}
+        <h1>Number : {count}</h1>
+        <button onClick={Increase}>Increase</button>
+        <button onClick={Decrease}>Decrease</button>
+        <button onClick={toZero}>Set To Zero</button>
       </div>
     </>
   );
