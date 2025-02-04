@@ -40,3 +40,28 @@
 .read-the-docs {
   color: #888;
 }
+
+.task {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 20px;
+  margin: 20px 0px;
+}
+
+.taskDelBut {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.inpTask {
+  padding: 20px;
+  display: block;
+  font-size: 1.6rem;
+  border-radius: 8px;
+  margin: 10px;
+  width: 600px;
+  border: none;
+  outline: none;
+}
