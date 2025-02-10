@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-
-export const ChangeProfile = (props) => {
+import React, { useState, useContext } from "react";
+import { AppContext } from "../App";
+export const ChangeProfile = () => {
+  const { setUsername } = useContext(AppContext);
   const [newUserName, setNewUserName] = useState("");
   return (
     <div>
@@ -12,7 +13,7 @@ export const ChangeProfile = (props) => {
       />
       <button
         onClick={() => {
-          props.setUsername(newUserName);
+          setUsername(newUserName);
         }}
       >
         Change UserName
