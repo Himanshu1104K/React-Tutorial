@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { useToggle } from "./useToggle";
+import { Cat } from "./Cat";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [isVisible, toggle] = useToggle();
+  // const [isVisible2, toggle2] = useToggle();
+
+  const client = new QueryClient();
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      {/* Example  */}
+      {/* <div className="App">
+        <button onClick={toggle}>{isVisible ? "Hide" : "Show"}</button>
+        {isVisible && <h1>Hidden Text</h1>}
+        <button onClick={toggle2}>{isVisible2 ? "Hide" : "Show"}</button>
+        {isVisible2 && <h1>Hidden Text</h1>}
+      </div> */}
+
+      {/* Example  */}
+      <div className="App">
+        <QueryClientProvider client={client}>
+          <Cat />
+        </QueryClientProvider>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
