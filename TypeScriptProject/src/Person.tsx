@@ -1,11 +1,23 @@
+// import { useState } from "react";
+
 interface Props {
   name: string;
   email: string;
   age: number;
   isMarried: boolean;
   friends: string[];
+  country: Country;
+}
+
+export enum Country {
+  India = "India",
+  USA = "USA",
+  Japan = "Japan",
 }
 export const Person = (props: Props) => {
+  // how to define datatype of useState.
+  // const [name, setName] = useState<string>();
+
   return (
     <div>
       <h1>Name : {props.name}</h1>
@@ -16,6 +28,8 @@ export const Person = (props: Props) => {
       {props.friends.map((friend: string) => {
         return <h1>{friend}</h1>;
       })}
+
+      <h1>Person is Born in : {props.country}</h1>
     </div>
   );
 };
